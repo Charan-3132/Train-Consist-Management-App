@@ -3,7 +3,7 @@ package com.train.app;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UseCase1_TrainConsistMgmt {
+public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 

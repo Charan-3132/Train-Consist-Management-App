@@ -6,47 +6,47 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TrainConsistManagementAppTest {
 
     @Test
-    void testSort_BasicSorting() {
-        int[] arr = {72, 56, 24, 70, 60};
+    void testSearch_BogieFound() {
+        String[] arr = {"BG101","BG205","BG309","BG412","BG550"};
 
-        int[] result = TrainConsistManagementApp.bubbleSort(arr);
+        boolean result = TrainConsistManagementApp.linearSearch(arr, "BG309");
 
-        assertArrayEquals(new int[]{24, 56, 60, 70, 72}, result);
+        assertTrue(result);
     }
 
     @Test
-    void testSort_AlreadySortedArray() {
-        int[] arr = {24, 56, 60, 70, 72};
+    void testSearch_BogieNotFound() {
+        String[] arr = {"BG101","BG205","BG309","BG412","BG550"};
 
-        int[] result = TrainConsistManagementApp.bubbleSort(arr);
+        boolean result = TrainConsistManagementApp.linearSearch(arr, "BG999");
 
-        assertArrayEquals(new int[]{24, 56, 60, 70, 72}, result);
+        assertFalse(result);
     }
 
     @Test
-    void testSort_DuplicateValues() {
-        int[] arr = {72, 56, 56, 24};
+    void testSearch_FirstElementMatch() {
+        String[] arr = {"BG101","BG205","BG309"};
 
-        int[] result = TrainConsistManagementApp.bubbleSort(arr);
+        boolean result = TrainConsistManagementApp.linearSearch(arr, "BG101");
 
-        assertArrayEquals(new int[]{24, 56, 56, 72}, result);
+        assertTrue(result);
     }
 
     @Test
-    void testSort_SingleElementArray() {
-        int[] arr = {50};
+    void testSearch_LastElementMatch() {
+        String[] arr = {"BG101","BG205","BG309"};
 
-        int[] result = TrainConsistManagementApp.bubbleSort(arr);
+        boolean result = TrainConsistManagementApp.linearSearch(arr, "BG309");
 
-        assertArrayEquals(new int[]{50}, result);
+        assertTrue(result);
     }
 
     @Test
-    void testSort_AllEqualValues() {
-        int[] arr = {40, 40, 40};
+    void testSearch_SingleElementArray() {
+        String[] arr = {"BG101"};
 
-        int[] result = TrainConsistManagementApp.bubbleSort(arr);
+        boolean result = TrainConsistManagementApp.linearSearch(arr, "BG101");
 
-        assertArrayEquals(new int[]{40, 40, 40}, result);
+        assertTrue(result);
     }
 }

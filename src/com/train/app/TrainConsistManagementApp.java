@@ -18,7 +18,7 @@ public class TrainConsistManagementApp {
         bogies.add("BG103");
         bogies.add("BG104");
 
-        // duplicates
+        // duplicates (ignored automatically)
         bogies.add("BG101");
         bogies.add("BG102");
 
